@@ -40,7 +40,7 @@ const Home = () => {
           <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="sq-btn"><Linkin /></a>
           <a href="/path-to-resume.pdf" target="_blank" className="rect-btn">
             <Resume />
-            <span>resume</span>
+            <p className='resume-btn'>resume</p>
           </a>
         </div>
       </div>          

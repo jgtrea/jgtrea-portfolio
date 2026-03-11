@@ -20,15 +20,18 @@
 
 /* Dotted line */
 .navbar-container::before {
-    position: absolute;
-    top: -80px;
-    content: "";    
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 80px;
-    border-left: 2px dotted var(--border);
-}
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 80px;
+  background-image: linear-gradient(to bottom, var(--border) 5px, transparent 5px);
+  background-size: 3px 10px;
+  background-repeat: repeat-y;
+  display: block;
+}   
 
 .nav-links-wrapper {
     flex: 1;
