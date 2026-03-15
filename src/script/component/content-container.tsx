@@ -3,12 +3,17 @@ import Home from './home.tsx';
 import Education from './education.tsx';
 import Project from './project.tsx';
 import '../../styles/navbar.css';
+import '../../styles/footer.css'
 import '../../styles/content.css';
 import '../../styles/education.css';
 import '../../styles/project.css';
 import '../../styles/theme.css';
 import Moon from '../../assets/lucide/moon.tsx';
 import Sunn from '../../assets/lucide/sun.tsx';
+import Email from '@/assets/lucide/email.tsx';
+import Gith from '@/assets/lucide/github.tsx';
+import Linkin from '@/assets/lucide/linkedin.tsx';
+import Copyr from '../../assets/lucide/copyr.tsx';
 
 const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, toggleTheme }) => {
   return (
@@ -30,6 +35,21 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
   );
 };
 
+const FooterBar = () => {
+  return (
+    <footer className="footer-container">
+      <div className="footer-left">
+        <Copyr /> 2026 Jan Gabriel Rea
+      </div>
+      <div className="footer-right">
+        <a href="mailto:@email.com"><Email /></a>
+        <a href="https://github.com/myprofile"><Gith /></a>
+        <a href="https://linkedin.com/in/myprofile"><Linkin /></a>
+      </div>
+    </footer>
+  );
+};
+
 const Layout = () => {
   const [theme, setTheme] = useState('dark');
 
@@ -48,6 +68,7 @@ const Layout = () => {
         <Home />    
         <span id="education"><Education /></span>    
         <span id="projects"><Project /></span>
+        <FooterBar />
       </div>
     </main>
   );

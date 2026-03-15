@@ -1,0 +1,43 @@
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg);
+    border: 2px solid var(--border);
+    border-bottom: 0px;    
+    padding: 10px 24px 10px;
+    box-sizing: border-box;
+    margin-top: 20%;
+}
+
+.footer-container svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-right a {
+    display: flex;
+    align-items: center;
+    color: var(--text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.footer-right a:hover {
+    color: var(--accent);
+}

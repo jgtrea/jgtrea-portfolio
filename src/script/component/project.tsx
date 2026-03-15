@@ -2,7 +2,6 @@ import RightArrow from '../../assets/lucide/arrow';
 import Website from "@/assets/lucide/website";
 import Gith from '@/assets/lucide/github';
 
-
 const Project = () => {
     return (
         <div className="project-container">
@@ -16,22 +15,51 @@ const Project = () => {
 
             <div className="project-wrapper">
                 <div className="project-display">
+                    <div className="project-display-url">
+                        content
+                    </div>
                     <div className="project-display-content">
                         <h1><b><i>Projects</i></b></h1>  
                         <p>lorem ipsum</p>
-                        <a href="/path-to-others.pdf" target="_blank" className="src-btn"><Website />website</a>   
-                        <a href="/path-to-others.pdf" target="_blank" className="src-btn"><Gith />source</a>                         
+                        <div className="src-wrapper">                        
+                            <a href="/path-to-others.pdf" target="_blank" className="src-btn">
+                                <Website />website
+                            </a>   
+                            <a href="/path-to-others.pdf" target="_blank" className="src-btn">
+                                <Gith />source
+                            </a>    
+                        </div>                     
+                    </div>
+                    <div className="project-display-stack">
+                        <a className="stack-btn">python</a>
+                        <a className="stack-btn">html</a>
+                        <a className="stack-btn">javascript</a>
                     </div>
                 </div>
+
                 <div className="project-display">
+                    <div className="project-display-url">
+                        content
+                    </div>
                     <div className="project-display-content">
                         <h1><b><i>Projects</i></b></h1>  
-                        <p>lorem ipsum</p>                        
-                        <a href="/path-to-others.pdf" target="_blank" className="src-btn"><Website />website</a>   
-                        <a href="/path-to-others.pdf" target="_blank" className="src-btn"><Gith />source</a>   
+                        <p>lorem ipsum</p>
+                        <div className="src-wrapper">
+                            <a href="/path-to-others.pdf" target="_blank" className="src-btn">
+                                <Website />website
+                            </a>   
+                            <a href="/path-to-others.pdf" target="_blank" className="src-btn">
+                                <Gith />source
+                            </a>
+                        </div>
+                    </div>
+                    <div className="project-display-stack">
+                        <a className="stack-btn">python</a>
+                        <a className="stack-btn">html</a>
+                        <a className="stack-btn">javascript</a>
                     </div>
                 </div>
-            </div>  
+            </div>              
         </div>
     );
 };
