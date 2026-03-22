@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="profile-section" id="home">
       <div className="img-container">
-        <img src="../src/assets/profile-1.png" alt="Profile" />
+        <img src="../src/assets/jan.JPG" alt="Profile" />
       </div>
       
       <div className="profile-details">

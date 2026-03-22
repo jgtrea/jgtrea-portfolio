@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Home from './home.tsx';
-import Education from './education.tsx';
-import Project from './project.tsx';
 import '../../styles/navbar.css';
 import '../../styles/footer.css'
 import '../../styles/content.css';
@@ -21,7 +18,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
     <nav className="navbar-container">
       <div className="nav-links-wrapper">
         <div className="nav-links">
-          <a href="#" className="nav-item">Home</a>
+          <a href="#home" className="nav-item">Home</a>
           <a href="#education" className="nav-item">Education</a>
           <a href="#projects" className="nav-item">Projects</a>
           <a href="#contact" className="nav-item">Contact</a>
@@ -29,7 +26,7 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
       </div>
       <button className="theme-toggle" onClick={toggleTheme}>
         <span className="icon-sun-moon">
-          {theme === 'light' ? <Moon /> : <Sunn /> }
+          {theme === 'dark' ? <Sunn /> : <Moon /> }
         </span> 
       </button>
     </nav>
@@ -45,7 +42,7 @@ const FooterBar = () => {
       
       <footer className="footer-container">
         <div className="footer-left">
-          <Copyr /> 2026 Jan Gabriel Rea
+          <Copyr /> 2026
         </div>
         <div className="footer-right">
           <a href="mailto:@email.com"><Email /></a>
@@ -57,11 +54,11 @@ const FooterBar = () => {
   );
 };
 
-const Layout = () => {
-  const [theme, setTheme] = useState('light');
+const Contact = () => {
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
-    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   useEffect(() => {
@@ -69,16 +66,14 @@ const Layout = () => {
   }, [theme]);
 
   return (
-    <main className="layout-root">      
-      <div className="content-wrapper">        
+    <main className="layout-root" id="contact">      
+      <div className="content-wrapper">  
         <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <Home />    
-        <span id="education"><Education /></span>    
-        <span id="projects"><Project /></span>
         <FooterBar />
       </div>
     </main>
   );
 };
 
-export default Layout;
+
+export default Contact;
