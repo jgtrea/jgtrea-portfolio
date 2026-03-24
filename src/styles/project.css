@@ -18,7 +18,7 @@
 .src-btn {
     text-decoration: none;
     background-color: var(--bg);
-    border: 1px solid #333333;
+    border: 1px solid var(--border);
     border-radius: 4px;
     color: var(--text);
     display: inline-flex;
@@ -33,6 +33,7 @@
     font-family: 'Inter', sans-serif;
     font-weight: 550;
     font-size: 11px;
+    box-shadow: var(--shadow);
 }
 
 .src-btn p {
@@ -69,11 +70,13 @@
 .project-display {
     z-index: 0;    
     width: 100%;
-    border: 1px solid #333333;
-    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
     overflow: hidden;
     min-height: 250px;
     background-color: var(--bg);
+    box-shadow: var(--shadow);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-display-url {
@@ -93,13 +96,23 @@
     padding-inline: 2%;
     z-index: 0;
     width: 100%;
-    border-top: 1px solid #333333;
+    border-top: 1px solid var(--border);
     min-height: 250px;
     background-color: var(--bg-content);
+    transition: border-color 0.3s ease;
 }
 
 .stack-btn {    
     text-decoration: none;
     background-color: var(--bg);
-    border: 1px solid
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    font-size: 11px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow);
 }

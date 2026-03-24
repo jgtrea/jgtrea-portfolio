@@ -42,7 +42,7 @@
     height: 56px;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid #333333;
+    border: 1px solid var(--border);
     box-sizing: border-box;
 }
 
@@ -60,14 +60,13 @@
 }
 
 .icon-link {
-    color: var(--text);
+    color: var(--text-muted);
     display: flex;
     align-items: center;
-    transition: opacity 0.2s ease;
 }
 
 .icon-link:hover {
-    opacity: 1;
+    color: var(--text-active);
 }
 
 .icon-link svg {
@@ -83,14 +82,13 @@
     text-decoration: none;
     color: var(--text);
     border-radius: 3px; 
-    border: 1px solid #333333; 
+    border: 1px solid var(--border); 
     background-color: transparent;
-    transition: all 0.2s ease;
 }
 
 .rect-btn:hover {
     background-color: rgba(255, 255, 255, 0.05);
-    border-color: #444444;
+    border-color: var(--border);
 }
 
 .rect-btn svg {

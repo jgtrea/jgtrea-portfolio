@@ -4,24 +4,29 @@ import Certifs from "./education/certifs";
 
 const Education = () => {
   return (
-    <Tabs defaultValue="education" variant="unstyled" className="background-section">
-      <Tabs.List>
+    <Tabs defaultValue="education" variant="unstyled">
+      <Tabs.List className="mantine-Tabs-list">
         <Tabs.Tab value="education" className="tab">
-          <a className="tab-item">Education</a>
+          <span className="tab-item">Education</span>
         </Tabs.Tab>
         <Tabs.Tab value="certificates" className="tab">
-          <a className="tab-item">Certificates</a>
+          <span className="tab-item">Certificates</span>
         </Tabs.Tab>
       </Tabs.List>
 
-      <Tabs.Panel value="education" className="education-content">        
-        <Schools />
-      </Tabs.Panel>
+      <div className="background-section">
+        <Tabs.Panel value="education" className="education-content">        
+          <div className="edu-content">
+            <Schools />
+          </div>
+        </Tabs.Panel>
 
-      <Tabs.Panel value="certificates" className="education-content">
-        <Certifs />
-      </Tabs.Panel>
-
+        <Tabs.Panel value="certificates" className="education-content">
+          <div className="edu-content">
+            <Certifs />
+          </div>
+        </Tabs.Panel>
+      </div>
     </Tabs> 
   );
 };
