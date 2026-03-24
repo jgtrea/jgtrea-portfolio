@@ -5,6 +5,11 @@ declare module '*.JPG' {
   export default content;
 }
 
+declare module '*.JPEG' {
+  const content: string;
+  export default content;
+}
+
 declare module '*.jpg' {
   const content: string;
   export default content;
