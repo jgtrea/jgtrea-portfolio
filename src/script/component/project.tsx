@@ -6,9 +6,9 @@ const Project = () => {
     return (
         <div className="project-container">
             <div className="project-titlebar">
-                <span className="tab-item">Projects</span>
-                <a href="/path-to-others.pdf" target="_blank" className="src-btn">
-                    others
+                <span className="intro-text"><b>My Projects</b></span>
+                <a href="/path-to-others.pdf" target="_blank" className="rect-btn">
+                    <span className='button-text'>others</span>
                     <RightArrow />
                 </a>              
             </div>       

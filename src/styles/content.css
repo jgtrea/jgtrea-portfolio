@@ -3,12 +3,11 @@
     display: flex;
     justify-content: center;
     padding: 40px 0;
-    padding-top: 150px;
 }
 
 .profile-details {
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     display: flex;
     flex-direction: column;
 }
@@ -96,7 +95,7 @@
     height: 16px;
 }
 
-.resume-text {
+.button-text {
     font-size: 13px;
     font-weight: 500;
 }

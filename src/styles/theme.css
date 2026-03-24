@@ -25,6 +25,13 @@
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.content-wrapper {
+    width: 100%;
+    max-width: 850px;
+    padding: 80px 24px 0;
+    box-sizing: border-box;
+}
+
 .background-section, 
 .education-content,
 .rect-btn {
