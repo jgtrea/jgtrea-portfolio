@@ -22,8 +22,7 @@ export const SchoolData: SchoolData[] = [
         title: "Bachelor of Science in Information Technology",
         year: "07/2022 - Present",
         achievements: [
-            "Maintained Dean's Lister status for three consecutive academic years.",
-            "Passed Data Structure and Algorithms."
+            "Maintained Dean's Lister status for three consecutive academic years."
         ]
     }
 ];
