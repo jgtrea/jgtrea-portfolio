@@ -25,9 +25,9 @@ const Home = () => {
           </div>
 
           <div className="social-icons">
-            <a href="mailto:your@email.com" className="icon-link"><Email /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="icon-link"><Linkin /></a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="icon-link"><Gith /></a>
+            <a href="mailto:jangabriel.formal@gmail.com" className="icon-link"><Email /></a>
+            <a href="https://github.com/SuperficialFlow" target="_blank" rel="noreferrer" className="icon-link"><Gith /></a>
+            <a href="https://www.linkedin.com/in/jan-rea-b566b1344/" target="_blank" rel="noreferrer" className="icon-link"><Linkin /></a>
             
             <a href="/resume.pdf" target="_blank" className="rect-btn">
               <Resume />

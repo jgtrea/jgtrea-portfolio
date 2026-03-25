@@ -45,9 +45,9 @@ const FooterBar = () => {
           <Copyr /> 2026 Jan Gabriel Rea
         </div>
         <div className="footer-right">
-          <a href="mailto:@email.com"><Email /></a>
-          <a href="https://github.com/myprofile"><Gith /></a>
-          <a href="https://linkedin.com/in/myprofile"><Linkin /></a>
+          <a href="mailto:jangabriel.formal@gmail.com"><Email /></a>
+          <a href="https://github.com/SuperficialFlow"><Gith /></a>
+          <a href="https://www.linkedin.com/in/jan-rea-b566b1344/"><Linkin /></a>
         </div>
       </footer>
     </div>

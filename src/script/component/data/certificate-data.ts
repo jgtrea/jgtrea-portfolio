@@ -9,8 +9,8 @@ export interface CertificateData {
 export const CertificateData: CertificateData[] = [
     {
         id: 1,
-        title: "Certificate of Completion",
-        issuer: "CodeChum Python Course",
+        title: "CodeChum Python Course Certificate",
+        issuer: "CodeChum",
         date: "11/2022"
     },
     {
