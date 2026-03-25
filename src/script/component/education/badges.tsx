@@ -1,28 +1,29 @@
 import { Timeline, Text, List, Group } from "@mantine/core";
-import { CertificateData } from '../data/certificate-data';
+import { BadgesData } from '../data/badges-data';
 import { Award } from 'lucide-react';
 
-const Certifs = () => {
-    const reversedCertifs = [...CertificateData].reverse();
+const Badges = () => {
+    const reversedBadges = [...BadgesData].reverse();
 
     return (
         <Timeline
-            active={reversedCertifs.length - 1}
+            active={reversedBadges.length - 1}
             lineWidth={2}
             bulletSize={24}
+            color="var(--text)"
             classNames={{
                 item: 'timeline-item-custom',
                 itemContent: 'timeline-content-custom',
                 itemBody: 'timeline-body-custom',
             }}
         >
-            {reversedCertifs.map((cert) => (
-                <Timeline.Item key={cert.id} bullet={<Award size={14} />} title={cert.title}>
+            {reversedBadges.map((badge) => (
+                <Timeline.Item key={badge.id} bullet={<Award size={14} />} title={badge.title}>
                     <Group gap="xs" align="center">
-                        <Text size="sm">{cert.issuer}</Text>
-                        {cert.date && <Text size="sm"> - {cert.date}</Text>}
+                        <Text size="sm">{badge.issuer}</Text>
+                        {badge.date && <Text size="xs" c="dimmed"> - {badge.date}</Text>}
                     </Group>
-                    {cert.achievements && cert.achievements.length > 0 && (
+                    {badge.achievements && badge.achievements.length > 0 && (
                         <List
                             size="xs"
                             mt="xs"
@@ -30,7 +31,7 @@ const Certifs = () => {
                             className="timeline-list"
                             style={{ paddingLeft: '20px' }}
                         >
-                            {cert.achievements.map((achievement, index) => (
+                            {badge.achievements.map((achievement, index) => (
                                 <List.Item key={index}>{achievement}</List.Item>
                             ))}
                         </List>
@@ -41,4 +42,4 @@ const Certifs = () => {
     );
 };
 
-export default Certifs;
+export default Badges;
