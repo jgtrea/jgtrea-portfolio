@@ -6,10 +6,7 @@ import Home from './routes/home.tsx';
 import Projects from './routes/projects.tsx';
 import Education from './component/education.tsx';
 import Project from './component/project.tsx';
-import Copyr from '../assets/lucide/copyr.tsx';
-import Email from '../assets/lucide/email.tsx';
-import Gith from '../assets/lucide/github.tsx';
-import Linkin from '../assets/lucide/linkedin.tsx';
+import FooterBar from './routes/footer.tsx';
 import ScrollTop from './component/scroll-top.tsx';
 import '../styles/navbar.css';
 import '../styles/footer.css';
@@ -25,7 +22,6 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
         <div className="nav-links">
           <Link to="/" className="nav-item">Home</Link>
           <Link to="/projects" className="nav-item">Projects</Link>
-          <Link to="/contact" className="nav-item">Contact</Link>
         </div>
       </div>
       <button className="theme-toggle" onClick={toggleTheme}>
@@ -34,23 +30,6 @@ const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, t
         </span> 
       </button>
     </nav>
-  );
-};
-
-const FooterBar = () => {
-  return (
-    <div className="footer-wrapper">      
-      <footer className="footer-container">
-        <div className="footer-left">
-          <Copyr /> 2026 Jan Gabriel Rea
-        </div>
-        <div className="footer-right">
-          <a href="mailto:jangabriel.formal@gmail.com"><Email /></a>
-          <a href="https://github.com/SuperficialFlow"><Gith /></a>
-          <a href="https://www.linkedin.com/in/jan-rea-b566b1344/"><Linkin /></a>
-        </div>
-      </footer>
-    </div>
   );
 };
 
@@ -83,7 +62,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<main className="layout-root"><div className="content-wrapper"><Projects /><FooterBar /></div></main>} />
-        <Route path="/contact" element={<main className="layout-root"><div className="content-wrapper"><FooterBar /></div></main>} />
       </Routes>
     </>
   );

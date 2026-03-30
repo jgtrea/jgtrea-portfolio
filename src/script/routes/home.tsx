@@ -6,7 +6,13 @@ import Gith from '@/assets/lucide/github.tsx';
 import Linkin from '@/assets/lucide/linkedin.tsx';
 import Resume from '@/assets/lucide/resume.tsx';
 import profileImage from '@/assets/profile-image-picture.JPG';
+import { socials, resumeUrl } from '@/script/component/data/socials-data';
 
+const iconMap: { [key: string]: React.FC } = {
+  email: Email,
+  github: Gith,
+  linkedin: Linkin,
+};
 
 const Home = () => {
   return (
@@ -25,11 +31,16 @@ const Home = () => {
           </div>
 
           <div className="social-icons">
-            <a href="mailto:jangabriel.formal@gmail.com" className="icon-link"><Email /></a>
-            <a href="https://github.com/SuperficialFlow" target="_blank" rel="noreferrer" className="icon-link"><Gith /></a>
-            <a href="https://www.linkedin.com/in/jan-rea-b566b1344/" target="_blank" rel="noreferrer" className="icon-link"><Linkin /></a>
+            {socials.map((social) => {
+              const IconComponent = iconMap[social.icon];
+              return (
+                <a key={social.name} href={social.url} target="_blank" rel="noopener noreferrer" className="icon-link">
+                  <IconComponent />
+                </a>
+              );
+            })}
             
-            <a href="/resume.pdf" target="_blank" className="rect-btn">
+            <a href={resumeUrl} target="_blank" className="rect-btn">
               <Resume />
               <span className='button-text'>resume</span>
             </a>

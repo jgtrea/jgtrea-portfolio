@@ -1,79 +1,79 @@
-import React, { useState, useEffect } from 'react';
-import '../../styles/navbar.css';
-import '../../styles/footer.css'
+import React, { useState } from 'react';
 import '../../styles/content.css';
 import '../../styles/education.css';
-import '../../styles/project.css';
-import '../../styles/theme.css';
-import Moon from '../../assets/lucide/moon.tsx';
-import Sunn from '../../assets/lucide/sun.tsx';
-import Email from '@/assets/lucide/email.tsx';
-import Gith from '@/assets/lucide/github.tsx';
-import Linkin from '@/assets/lucide/linkedin.tsx';
-import Copyr from '../../assets/lucide/copyr.tsx';
-import TopArrow from '@/assets/lucide/top-arrow.tsx';
 
-const Navbar: React.FC<{ theme: string; toggleTheme: () => void }> = ({ theme, toggleTheme }) => {
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    
+    const mailtoLink = `mailto:jangabriel.formal@gmail.com?subject=Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    
+    window.location.href = mailtoLink;
+    setStatus('sent');
+    
+    setTimeout(() => {
+      setStatus('idle');
+      setFormData({ name: '', email: '', message: '' });
+    }, 2000);
+  };
+
   return (
-    <nav className="navbar-container">
-      <div className="nav-links-wrapper">
-        <div className="nav-links">
-          <a href="#home" className="nav-item">Home</a>
-          <a href="#education" className="nav-item">Education</a>
-          <a href="#projects" className="nav-item">Projects</a>
-          <a href="#contact" className="nav-item">Contact</a>
+    <div className="content-wrapper">
+      <div id="contact" className="profile-section">
+        <div className="profile-details">
+          <div className="contact-form-container">
+            <h2>Get in Touch</h2>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Your message..."
+                  rows={5}
+                  required
+                />
+              </div>
+              <button type="submit" className="submit-btn" disabled={status === 'sending'}>
+                {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Sent!' : 'Send Message'}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-      <button className="theme-toggle" onClick={toggleTheme}>
-        <span className="icon-sun-moon">
-          {theme === 'dark' ? <Sunn /> : <Moon /> }
-        </span> 
-      </button>
-    </nav>
-  );
-};
-
-const FooterBar = () => {
-  return (
-    <div className="footer-wrapper">
-      <div className="footer-top" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-        <TopArrow /> Back to Top
-      </div>
-      
-      <footer className="footer-container">
-        <div className="footer-left">
-          <Copyr /> 2026
-        </div>
-        <div className="footer-right">
-          <a href="mailto:@email.com"><Email /></a>
-          <a href="https://github.com/myprofile"><Gith /></a>
-          <a href="https://linkedin.com/in/myprofile"><Linkin /></a>
-        </div>
-      </footer>
     </div>
   );
 };
-
-const Contact = () => {
-  const [theme, setTheme] = useState('dark');
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  return (
-    <main className="layout-root" id="contact">      
-      <div className="content-wrapper">  
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <FooterBar />
-      </div>
-    </main>
-  );
-};
-
 
 export default Contact;
